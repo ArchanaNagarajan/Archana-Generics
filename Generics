@@ -1,0 +1,50 @@
+
+import java.util.Scanner;
+
+class Demo<T> {
+	
+	 T value;
+	 T number;
+	
+	void display() {
+		
+		System.out.println("the Type of the variable is "+ value.getClass().getName());
+	}
+
+	T value(T value) {
+		
+		this.value=value;
+		return value ;
+	}
+	
+}
+public class DemoClass{
+	
+	public static void main(String[] args) {
+		
+		
+		Demo<Integer> id_class = new Demo<Integer>();
+		System.out.println("Enter your ID");
+		Scanner id = new Scanner(System.in); 
+		int ID = id.nextInt();
+
+		Demo<String> name_class = new Demo<String>();
+		System.out.println("Enter your name");
+		Scanner nameOf = new Scanner(System.in); 
+		String name= nameOf.next();
+		
+		Demo<Double> mark_class = new Demo<Double>();
+		System.out.println("Enter your total mark ");
+		Scanner marks_student = new Scanner(System.in); 
+		double marks = marks_student.nextDouble();
+		
+		System.out.println("Id is : "+id_class.value(ID));
+		id_class.display();
+		System.out.println("Name is : "+ name_class.value(name));
+		name_class.display();
+		System.out.println("Total is : "+mark_class.value(marks));
+		mark_class.display();
+		
+	}
+
+}
