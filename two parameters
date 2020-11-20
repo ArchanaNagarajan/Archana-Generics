@@ -1,0 +1,57 @@
+package generic;
+import java.util.Scanner;
+import arc.Demo;
+
+public class DemoClass extends Demo{
+	
+	public static void main(String[] args) {
+		
+		System.out.println("STUDENT DETAILS");
+		Demo<Integer,String> id_class = new Demo<Integer,String>();
+		System.out.println("Enter student ID");
+		Scanner id = new Scanner(System.in); 
+		int ID = id.nextInt();
+		System.out.println("Enter student name");
+		Scanner nameOf = new Scanner(System.in); 
+		String name= nameOf.next();
+		System.out.println(" Id  : "+id_class.value(ID)+" \n Name : "+id_class.str(name));
+		id_class.display();
+		
+		System.out.println("STAFF DETAILS");
+		Demo<Double,String> Staff_class = new Demo<Double,String>();
+		System.out.println("Enter your Staff name ");
+		Scanner staff_name = new Scanner(System.in); 
+		String staff = staff_name.next();
+		System.out.println("Enter Staff's salary ");
+		Scanner staff_salary = new Scanner(System.in); 
+		double salary = staff_salary.nextDouble();
+		System.out.println(" Staff name : "+Staff_class.str(staff)+"\n Salary : "+Staff_class.value(salary));
+		Staff_class.display();	
+	}
+
+}
+package arc;
+
+public class Demo<T,N> {
+
+	T value;
+	 T number;
+	 N str;
+
+	public void display() {
+			
+			System.out.println("the Type of the variables are "+ value.getClass().getName()+ " & "+ str.getClass().getName());
+		}
+
+	public T value(T value) {
+			
+			
+			this.value=value;
+			return value ;
+		}
+	public N str(N str) {
+		
+		this.str=str;
+		return str;
+	}
+}
