@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+class Calculator<T extends Number>{
+	
+	T value;
+	T number;
+	
+	 Calculator(T obj1,T obj2) {
+		
+		value=obj1;
+		number = obj2;
+	}
+	void add() {
+		
+		int sum=0;
+		sum=value.intValue()+number.intValue();
+		System.out.println("Added value is "+sum);
+		
+	}
+    void subtract() {
+		
+	    int difference;
+		difference=value.intValue()-number.intValue();
+		System.out.println("Subtracted value is "+difference);
+		
+	}
+}
+
+	public class ExtendsClass {
+
+	public static void main(String[] args) {
+		
+		System.out.println("INTEGER");
+		System.out.println("Enter the 2 numbers");
+		Scanner num1 = new Scanner(System.in);
+		Scanner num2 = new Scanner(System.in);
+		int value1 = num1.nextInt();
+		int value2 = num2.nextInt();
+		Calculator<Integer> number = new Calculator<Integer>(value1,value2);
+		number.add();
+	    number.subtract();
+	    System.out.println("DOUBLE");
+	    System.out.println("Enter the 2 numbers");
+		Scanner num_1 = new Scanner(System.in);
+		Scanner num_2 = new Scanner(System.in);
+		double value_1 = num_1.nextDouble();
+		double value_2 = num_2.nextDouble();
+		Calculator<Double> number_value = new Calculator<Double>(value_1,value_2);
+		number_value.add();
+	    number_value.subtract();
+
+	}
+
+}
