@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+interface multiplication{
+		 
+		 void multiply();
+		 void division();
+	 }
+
+ class addition implements multiplication{
+		 
+		 int value =78;
+		 int number=45;
+	void add() {
+		
+		int sum=0;
+		sum=value+number;
+		System.out.println("Added value is "+sum);
+		
+	}
+    void subtract() {
+		
+	    int difference;
+		difference=value-number;
+		System.out.println("Subtracted value is "+difference);
+		
+	}
+	
+ public void multiply() {
+		
+		int product;
+		product = value*number;
+		System.out.println("Product is "+product);
+	}
+	
+	public void division() {
+		
+		int quotient ;
+		quotient = value/number;
+		System.out.println("Quotient is "+ quotient);
+		
+	}
+}
+
+public class ClassAndInterface {
+
+
+	public static void main(String[] args) {
+		
+		ArrayList<addition> number1 = new ArrayList<addition>();
+	    number1.add(new addition());
+	    function(number1);
+	}	
+
+	private static void function(ArrayList<addition> number1) {
+		
+		for(addition value : number1) {
+			
+			value.add();
+			value.subtract();
+			value.multiply();
+			value.division();
+			
+		}
+		
+	}
+
+}
